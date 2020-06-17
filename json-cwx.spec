@@ -5,7 +5,7 @@ Summary:        Modified version of the JSON-C library with extensions
 
 License:        GPL
 URL:            https://github.com/LLNL/json-cwx/releases
-Source0:        https://github.com/LLNL/json-cwx/archive/%{name}-%{version}.tar.gz
+Source0:        https://github.com/LLNL/%{name}/archive/%{version}.tar.gz
 
 BuildRequires:  libtool
 BuildRequires:  autoconf
