@@ -1,6 +1,3 @@
-%global cart_major 4
-%global daos_major 0
-
 Name:           json-cwx
 Version:        0.12
 Release:        1%{?commit:.git%{shortcommit}}%{?dist}
@@ -48,7 +45,7 @@ ascii string syntax.
 
 %build
 sh autogen.sh
-%configure %{configure_options}
+%configure
 %{make_build}
 
 %install
@@ -61,5 +58,5 @@ cp $RPM_BUILD_DIR/%{name}-%{version}/LICENSE .
 %{_libdir}/*
 
 %changelog
-* Tue Jun 15 2020 Phil Henderson <phillip.henderson@intel.com> - 0.12-1
+* Tue Jun 16 2020 Phil Henderson <phillip.henderson@intel.com> - 0.12-1
 - Initial version
