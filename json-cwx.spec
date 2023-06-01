@@ -1,6 +1,6 @@
 Name:           json-cwx
 Version:        0.12
-Release:        1%{?commit:.git%{shortcommit}}%{?dist}
+Release:        2%{?commit:.git%{shortcommit}}%{?dist}
 Summary:        Modified version of the JSON-C library with extensions
 
 License:        GPL
@@ -51,6 +51,7 @@ sh autogen.sh
 %install
 %{make_install}
 cp $RPM_BUILD_DIR/%{name}-%{version}/LICENSE .
+rm -f %{buildroot}%{_libdir}/libjson-cwx.a
 
 %files
 %license LICENSE
@@ -58,5 +59,8 @@ cp $RPM_BUILD_DIR/%{name}-%{version}/LICENSE .
 %{_libdir}/*
 
 %changelog
+* Tue Jul 04 2023 Brian J. Murrell <brian.murrell@intel.com> - 0.12-2
+- Don't install static lib
+
 * Tue Jun 16 2020 Phil Henderson <phillip.henderson@intel.com> - 0.12-1
 - Initial version
